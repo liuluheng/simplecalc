@@ -121,6 +121,12 @@ int main(int argc, char **argv)
     Scan scan;
     long numbytes;
 
+    if (argc != 2) {
+        fprintf(stderr,
+                "Usage: %s <testfile>\n", argv[0]);
+        return -1;
+    }
+
     //Read the whole file into the buffer.
     f = fopen(argv[1], "r");
     fseek(f, 0, SEEK_END);
